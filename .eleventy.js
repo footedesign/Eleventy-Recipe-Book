@@ -41,5 +41,6 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: { input: 'src', output: '_site', data: '_data' },
+    pathPrefix: '/Eleventy-Recipe-Book/',
   };
 };
