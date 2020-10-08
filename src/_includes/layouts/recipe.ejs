@@ -1,0 +1,58 @@
+---
+layout: layouts/base.ejs
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-6">
+  <article class="p-5 order-last lg:order-first lg:col-span-2 border border-solid border-gray-200 rounded">
+    <header class="mb-4 pb-4 rounded-t border-b border-solid border-gray-400">
+      <div class="pr-12 pb-2">
+        <h1 class="mt-0 mb-2 -ml-5 p-2 pl-5 font-bold text-3xl bg-gray-200 opacity-75 rounded-r-sm"><%= title %></h1>
+      </div>
+      <span class="bg-gray-200 opacity-75 -ml-5 py-1 pr-3 pl-5 text-sm font-semibold rounded-r-sm">
+        <%= tag %>
+      </span>
+    </header>
+    <main>
+      <section class="pb-3 border-b border-solid border-gray-400 flex flex-col lg:flex-row-reverse">
+        <div class="flex-auto lg:ml-4">
+          <table class="table-auto border-collapse w-full">
+            <thead>
+              <tr>
+                <th class="px-4 py-2 bg-gray-200 rounded-l-sm border-r border-b">Servings</th>
+                <th class="px-4 py-2 bg-gray-200 border-b">Prep Time</th>
+                <th class="px-4 py-2 bg-gray-200 rounded-r-sm border-l border-b">Cooking Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="px-4 py-2 text-center border-r border-t"><%= yield %></td>
+                <td class="px-4 py-2 text-center border-t"><%= prep %></td>
+                <td class="px-4 py-2 text-center border-l border-t"><%= cook %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="flex-auto">
+          <h2 class="font-bold text-2xl mt-0">Ingredients:</h2>
+          <ul>
+          <% ingredients.forEach((ingredient) => { %>
+            <li><%= ingredient %></li>
+          <% }) %>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <%- content %>
+      </section>
+    </main>
+  </article>
+
+  <figure class="mb-6 lg:col-span-1">
+    <div class="border border-solid border-gray-200 rounded">
+      <img src="<%= image %>" alt="<%= title %>" class="w-screen h-64 lg:h-auto object-cover object-center rounded-t">
+      <% if(source) { %>
+      <figcaption class="p-4 text-center font-serif italic underline"><a href="<%= source %>" target="_blank" rel="nofollow noopener">Source</a></figcaption>
+      <% } %>
+    </div>
+  </figure>
+</div>

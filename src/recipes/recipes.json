@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/recipe.ejs",
+  "permalink": "{{ page.fileSlug }}/index.html",
+  "tags": "recipes"
+}
