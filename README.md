@@ -106,6 +106,7 @@ Clone this repository to your own GitHub account and deploy to Netlify:
 * [ ] utilize a logo?
 * [ ] [Extract Components](https://tailwindcss.com/docs/extracting-components) from Tailwind CSS
 * [ ] Cooking mode: recipe instructions in easily digestable chunks for use during cooking
+* [ ] Netlify CMS
 
 ### Contributions
 
