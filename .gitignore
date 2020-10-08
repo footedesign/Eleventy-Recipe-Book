@@ -2,7 +2,7 @@
 /node_modules
 
 # Output directories
-#/_site
+/_site
 
 # Generated file
 /src/_includes/layouts/webpack.ejs
