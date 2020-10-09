@@ -3,8 +3,8 @@ pagination:
   data: collections.recipes
   size: 10
   alias: list
-  reverse: true
-permalink: '{%- if pagination.pageNumber > 0 -%}{{ "page" + pagination.pageNumber + 1 + "/index.html" | url }} {%- else -%}index.html{%- endif -%}'
+  reverse: false
+permalink: '{%- if pagination.pageNumber > 0 -%}{{ "page" + pagination.pageNumber + "/index.html" | url }} {%- else -%}index.html{%- endif -%}'
 eleventyComputed:
   title: '{%- if pagination.pageNumber > 0 -%}Page {{ pagination.pageNumber + 1 }} | {{ site.title }} {%- else -%}{{ site.title }}{%- endif -%}'
 ---
@@ -26,9 +26,9 @@ eleventyComputed:
 </div>
 
 <div class="mt-5 pt-6 border-t grid grid-cols-3">
-  {%- if pagination.next %}
-  <div class="col-start-1 text-left"><a class="p-3 border border-solid border-gray-200 rounded hover:bg-gray-200" href="{{ pagination.next | replace('/index.html', '') | url }}">← Previous</a></div>
-  {%- endif -%} {%- if pagination.previous %}
-  <div class="col-start-3 text-right"><a class="p-3 border border-solid border-gray-200 rounded hover:bg-gray-200" href="{{ pagination.previous | replace('/index.html', '') | url }}">Next →</a></div>
-  {%- endif -%}
+  {% if pagination.href.next %}
+  <div class="col-start-1 text-left"><a class="p-3 border border-solid border-gray-200 rounded hover:bg-gray-200" href="{{ pagination.href.next | url }}">← Next</a></div>
+  {% endif %} {% if pagination.href.previous %}
+  <div class="col-start-3 text-right"><a class="p-3 border border-solid border-gray-200 rounded hover:bg-gray-200" href="{{ pagination.href.previous | url }}">Previous →</a></div>
+  {% endif %}
 </div>
