@@ -105,6 +105,7 @@ Clone this repository to your own GitHub account and deploy to Netlify:
 * [ ] localStorage shopping list
 * [ ] utilize a logo?
 * [ ] [Extract Components](https://tailwindcss.com/docs/extracting-components) from Tailwind CSS
+* [ ] dark mode
 * [ ] Cooking mode: recipe instructions in easily digestable chunks for use during cooking
 * [ ] Netlify CMS
 

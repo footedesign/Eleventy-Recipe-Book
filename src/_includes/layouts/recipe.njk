@@ -50,7 +50,7 @@ layout: layouts/base.njk
   <figure class="mb-6 lg:col-span-1">
     <div class="border border-solid border-gray-200 rounded">
       <img src="{{ image | url }}" alt="{{ title }}" class="w-screen h-64 lg:h-auto object-cover object-center rounded-t">
-      {%- if source -%}
+      {% if source %}
       <figcaption class="p-4 text-center font-serif italic underline"><a href="{{ source }}" target="_blank" rel="nofollow noopener">Source</a></figcaption>
       {% endif %}
     </div>

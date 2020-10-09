@@ -5,7 +5,7 @@ prep: 30 minutes
 cook: 1 minutes
 image: /assets/images/recipes/salmon-risotto.jpg
 source: https://zelda.gamepedia.com/Salmon_Risotto
-tag: poultry
+tag: seafood
 ingredients:
 - 1 hearty salmon
 - 1 Hylian rice
