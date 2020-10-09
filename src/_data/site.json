@@ -4,5 +4,6 @@
   "description": "A curated list of recipes",
   "url": "https://example.com",
   "locale": "en",
-  "author": "Anonymous"
+  "author": "Anonymous",
+  "netlify_cms": true
 }

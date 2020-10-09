@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | url }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | url }}">
     <link rel="icon" href="{{ '/favicon.ico' | url }}">
-    <title>{{ title }}</title>
+    <title>{{ title }} | {{ site.title }}</title>
     <meta name="description" content="{{ site.description }}">
     {% include './webpack.ejs' %}
   </head>
@@ -21,5 +21,11 @@
     <div class="container mx-auto p-3">
       {{ content | safe }}
     </div>
+
+    {# Only include Netlify JS if netlify_cms: true and it's the site index #}
+    {% if site.netlify_cms and page.url === '/' %}
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>window.netlifyIdentity&&window.netlifyIdentity.on('init',n=>{n||window.netlifyIdentity.on('login',()=>{document.location.href='/admin/'})});</script>
+    {% endif %}
   </body>
 </html>
