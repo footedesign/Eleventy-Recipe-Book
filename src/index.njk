@@ -6,7 +6,7 @@ pagination:
   reverse: false
 permalink: '{%- if pagination.pageNumber > 0 -%}{{ "page" + pagination.pageNumber + "/index.html" | url }} {%- else -%}index.html{%- endif -%}'
 eleventyComputed:
-  title: '{%- if pagination.pageNumber > 0 -%}Page {{ pagination.pageNumber + 1 }} | {{ site.title }} {%- else -%}{{ site.title }}{%- endif -%}'
+  title: '{% if pagination.pageNumber > 0 %}Recipe Index - Page {{ pagination.pageNumber + 1 }}{% else %}Recipe Index{% endif %}'
 ---
 
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
