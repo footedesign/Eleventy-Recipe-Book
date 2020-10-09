@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | url }}">
+    <link rel="icon" href="{{ '/favicon.ico' | url }}">
+    <title>{{ title }} - {{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    {% include './webpack.ejs' %}
+  </head>
+  <body>
+    <nav class="flex items-center justify-between flex-wrap bg-blue-800 p-3 mb-3">
+      <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <a href="{{ '/' | url }}" class="hover:underline">{{ site.title }}</a>
+      </div>
+    </nav>
+
+    <div class="container mx-auto p-3">
+      {{ content | safe }}
+    </div>
+  </body>
+</html>

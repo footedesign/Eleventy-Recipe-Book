@@ -2,10 +2,10 @@
 title: 404 - Page not found
 description: Page not found
 permalink: 404.html
-layout: layouts/base.ejs
+layout: layouts/base.njk
 eleventyExcludeFromCollections: true
 ---
 
 <h1 class="mb-4 font-bold text-3xl">Page not found.</h1>
 
-<p>Sorry about that. Return <a href="/" class="underline">home</a>?</p>
+<p>Sorry about that. Return <a href="{{ '/' | url }}" class="underline">home</a>?</p>

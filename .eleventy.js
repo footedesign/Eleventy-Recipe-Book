@@ -1,5 +1,4 @@
 const htmlmin = require('html-minifier');
-const dateFns = require('date-fns');
 const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
 
 module.exports = function (eleventyConfig) {
@@ -11,13 +10,6 @@ module.exports = function (eleventyConfig) {
       } else {
         return `./src/${imgPath}`;
       }
-    },
-  });
-
-  eleventyConfig.setEjsOptions({
-    rmWhitespace: true,
-    context: {
-      dateFns,
     },
   });
 
@@ -40,7 +32,6 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
-    dir: { input: 'src', output: '_site', data: '_data' },
-    pathPrefix: '/Eleventy-Recipe-Book/',
+    dir: { input: 'src', output: '_site', data: '_data' }
   };
 };
